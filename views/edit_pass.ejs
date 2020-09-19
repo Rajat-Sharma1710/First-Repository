@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Password Manager</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/">Home</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="/add_category">Add new Password Category</a></li>
+          <li><a href="/pass_category">View Password Category</a></li>
+          
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"> New
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="/add_pass">Add new Password</a></li>
+          <li><a href="/view_pass">View all Passwords</a></li>
+          
+        </ul>
+      </li>
+      <li>     <a href="/logout" >Logout</a>
+      </li>
+    </ul>
+    <div class="navbar-header" style="float: right;"><a class="navbar-brand" href="#">Logged in as: <% if(user){%> <%= user%> <% }%></a>
+    </div> 
+  </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <h1 class='text-center'><%= title%></h1>
+        <div id="signupbox" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <div class="panel-title">Edit Passowrd details</div>
+                     </div>  
+                <div class="panel-body" >
+                    <form action="/view_pass/edit/" id="EmployeeForm" class="form-horizontal" method="post"  role="form">
+                        <input type="hidden" name="id" value=<%=data._id%> >
+
+                        <div class="form-group">
+                            <label for="passCategory" class="col-md-3 control-label">Password Category</label>
+                            <div class="col-md-9">
+                            
+                              <input type="text" class="form-control" name="passcate" rows='5' value="<%=data.password_category%>" placeholder="Enter your password details"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="passDetails" class="col-md-3 control-label"> Edit Password details</label>
+                            <div class="col-md-9">
+                            
+                              <textarea class="form-control" name="passdetail" rows='5' placeholder="Enter your password details"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <!-- Button -->                                        
+                            <div class="col-md-offset-3 col-md-9">
+                            <input type="submit" name="Add Password" value="edit" class="btn btn-primary">   
+                            </div>
+                        </div>
+            <p><a href="/view_pass">View all Passwords.</a></p>
+
+            </body>
+
+      </html>
+
+
