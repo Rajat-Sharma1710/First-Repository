@@ -1,5 +1,5 @@
 var mongoose=require("mongoose");
-mongoose.connect('mongodb://localhost/pms',{useNewUrlParser: true,useCreateIndex: true, useUnifiedTopology: true,});
+mongoose.connect('add your database url here',{useNewUrlParser: true,useCreateIndex: true, useUnifiedTopology: true,});
 var conn=mongoose.connection;
 
 var passSchema=mongoose.Schema({

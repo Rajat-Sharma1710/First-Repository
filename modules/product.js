@@ -1,5 +1,5 @@
 var mongoose =require('mongoose')
-mongoose.connect('mongodb://localhost/pms',{useNewUrlParser: true, useCreateIndex: true});
+mongoose.connect('add your database url here',{useNewUrlParser: true, useCreateIndex: true});
 var conn=mongoose.connection;
 
 var pro_sch=mongoose.Schema({
